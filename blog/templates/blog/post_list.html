@@ -7,21 +7,10 @@
                 <h1><a href="">Laura Blog</a></h1>
             </div>
 
-            <div>
-                <p>Publicado: 07.11.2015, 14:14</p>
-                <h2><a href="">Mi primer post</a></h2>
-                <p>Mi nombre es Laura y este es mi primer blog creado desde cero por mi :D
-Hablemos un poco sobre mi, soy Estudiante de Ingenieria en Sistemas de Informacion, me encanta todo lo que tenga que ver con tecnologia, inteligencia artificial, servidores y redes.
-Trabajo en equipo, soy una persona responsable, Siempre queriendo aprender más, dedicada y honesta, me considero una persona muy organizada, soy respetuosa.
-Esto fue un mini resumen de mi.
-Saluditos </p>
-            </div>
-
-            <div>
-                <p>published: 14.06.2014, 12:14</p>
-                <h2><a href="">Mi segundo post</a></h2>
-                <p>LINUX (o GNU/LINUX, como algunos prefieren denominarlo) es un SO como DOS o Windows. Es decir el software necesario que tu ordenador te permita utilizar programas como, los editores de texto, juegos, Internet, etc. Puede usarse mediante una interfaz gráfica al igual que Windows.
-                </p>
-            </div>
-        </body>
-    </html>
+          {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+    {% endfor %}
